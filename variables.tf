@@ -1,3 +1,3 @@
-variable "input" {
-  default = "hello world"
+variable "name" {
+  type = string
 }
