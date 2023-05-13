@@ -8,7 +8,7 @@ terraform {
 }
 
 resource "kind_cluster" "cluster" {
-  name   = "test"
+  name   = var.name
   config = <<-EOF
     kind: Cluster
     apiVersion: kind.x-k8s.io/v1alpha4

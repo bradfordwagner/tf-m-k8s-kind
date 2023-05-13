@@ -1,6 +1,8 @@
 package test
 
 import (
+	"fmt"
+	"math/rand"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
@@ -10,7 +12,7 @@ import (
 func TestTerraformBasicExample(t *testing.T) {
 	t.Parallel()
 
-	expectedText := "hello world"
+	clusterName := fmt.Sprintf("test-cluster-%d", rand.Intn(10000))
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		// website::tag::1::Set the path to the Terraform code that will be tested.
 		// The path to where our Terraform code is located
@@ -19,7 +21,7 @@ func TestTerraformBasicExample(t *testing.T) {
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
-			"name": expectedText,
+			"name": clusterName,
 		},
 
 		// Variables to pass to our Terraform code using -var-file options
