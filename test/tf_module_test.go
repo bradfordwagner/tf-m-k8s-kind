@@ -17,8 +17,7 @@ func TestTerraformBasicExample(t *testing.T) {
 		// website::tag::1::Set the path to the Terraform code that will be tested.
 		// The path to where our Terraform code is located
 		// TerraformDir: "../examples/terraform-basic-example",
-		TerraformDir: "../",
-
+		TerraformDir: "./",
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
 			"name": clusterName,
