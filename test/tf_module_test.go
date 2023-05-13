@@ -22,6 +22,18 @@ func TestTerraformBasicExample(t *testing.T) {
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
 			"name": clusterName,
+			"extra_port_mappings": []map[string]interface{}{
+				{
+					"host_port":      30300,
+					"container_port": 12344,
+					"protocol":       "TCP",
+				},
+				{
+					"host_port":      30301,
+					"container_port": 12345,
+					"protocol":       "TCP",
+				},
+			},
 		},
 
 		// Variables to pass to our Terraform code using -var-file options
