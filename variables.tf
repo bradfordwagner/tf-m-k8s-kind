@@ -10,3 +10,7 @@ variable "extra_port_mappings" {
     protocol       = string # TCP
   }))
 }
+
+variable "k8s_image" {
+  default = "kindest/node:v1.25.8"
+}
