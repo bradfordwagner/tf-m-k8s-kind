@@ -22,14 +22,4 @@ resource "kind_cluster" "cluster" {
           protocol: ${port_mapping.protocol}
       %{endfor~}
     EOF
-  # want to take internal kubeconfig
-  # parse server, ca
-  # store in vault
-  # then have it picked up during hydration
-  provisioner "local-exec" {
-    command = "${path.module}/extract_server_ca.sh"
-    environment = {
-      "cluster_name" = var.name
-    }
-  }
 }
