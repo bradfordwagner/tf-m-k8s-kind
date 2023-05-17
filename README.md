@@ -1,2 +1,2 @@
-# gh-template-tf-module
-- requires a token to write ca/server to vault
+# tf-m-k8s-kind
+- terraform module for creating a kind cluster
